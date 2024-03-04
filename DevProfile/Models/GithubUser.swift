@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct Githup {
-    <#fields#>
+struct GithubUser: Codable {
+    let login: String
+    let avatarUrl: String
 }
