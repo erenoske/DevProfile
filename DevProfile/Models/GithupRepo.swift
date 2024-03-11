@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct GithupRepo: Codable {
+    let name: String
+    let description: String?
+    let owner: Owner
+}
+
+struct Owner: Codable {
+    let htmlUrl: String
+}
