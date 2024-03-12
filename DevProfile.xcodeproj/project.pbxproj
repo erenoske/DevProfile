@@ -19,6 +19,10 @@
 		B0AAEF402B9D5338006D81AC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B0AAEF3F2B9D5338006D81AC /* SDWebImage */; };
 		B0AAEF422B9D5338006D81AC /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0AAEF412B9D5338006D81AC /* SDWebImageMapKit */; };
 		B0AAEF442B9E83A0006D81AC /* GithupRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEF432B9E83A0006D81AC /* GithupRepo.swift */; };
+		B0AAEF462B9EC964006D81AC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEF452B9EC964006D81AC /* UserData.swift */; };
+		B0AAEF4B2B9EF959006D81AC /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEF4A2B9EF959006D81AC /* CollectionViewTableViewCell.swift */; };
+		B0AAEF4D2B9F08BD006D81AC /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEF4C2B9F08BD006D81AC /* HeaderUIView.swift */; };
+		B0AAEF502B9F2B8A006D81AC /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEF4F2B9F2B8A006D81AC /* HeaderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		B0AAEF372B9D4253006D81AC /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		B0AAEF3C2B9D525D006D81AC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B0AAEF432B9E83A0006D81AC /* GithupRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithupRepo.swift; sourceTree = "<group>"; };
+		B0AAEF452B9EC964006D81AC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		B0AAEF4A2B9EF959006D81AC /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		B0AAEF4C2B9F08BD006D81AC /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
+		B0AAEF4F2B9F2B8A006D81AC /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +78,9 @@
 			children = (
 				B0AAEF362B9D4240006D81AC /* Managers */,
 				B0AAEF3B2B9D5239006D81AC /* Resources */,
+				B0AAEF482B9EF84B006D81AC /* ViewModels */,
 				B064F0B62B96754F00C3C514 /* Models */,
+				B0AAEF492B9EF8A5006D81AC /* Views */,
 				B064F0B42B9674FE00C3C514 /* Controllers */,
 				B064F0A02B96735C00C3C514 /* AppDelegate.swift */,
 				B064F0A22B96735C00C3C514 /* SceneDelegate.swift */,
@@ -113,6 +123,24 @@
 				B0AAEF3C2B9D525D006D81AC /* Extensions.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B0AAEF482B9EF84B006D81AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B0AAEF452B9EC964006D81AC /* UserData.swift */,
+				B0AAEF4F2B9F2B8A006D81AC /* HeaderViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B0AAEF492B9EF8A5006D81AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0AAEF4A2B9EF959006D81AC /* CollectionViewTableViewCell.swift */,
+				B0AAEF4C2B9F08BD006D81AC /* HeaderUIView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +220,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0AAEF4B2B9EF959006D81AC /* CollectionViewTableViewCell.swift in Sources */,
 				B0AAEEE32B96873D006D81AC /* SecondViewController.swift in Sources */,
 				B064F0B82B96756B00C3C514 /* GithubUser.swift in Sources */,
+				B0AAEF462B9EC964006D81AC /* UserData.swift in Sources */,
 				B0AAEF442B9E83A0006D81AC /* GithupRepo.swift in Sources */,
+				B0AAEF502B9F2B8A006D81AC /* HeaderViewModel.swift in Sources */,
+				B0AAEF4D2B9F08BD006D81AC /* HeaderUIView.swift in Sources */,
 				B064F0A52B96735C00C3C514 /* MainViewController.swift in Sources */,
 				B0AAEF382B9D4253006D81AC /* APICaller.swift in Sources */,
 				B064F0A12B96735C00C3C514 /* AppDelegate.swift in Sources */,

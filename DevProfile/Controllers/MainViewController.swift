@@ -11,9 +11,6 @@ import SDWebImage
 class MainViewController: UIViewController {
     
     var gitHubUser : GithubUser?
-    var userName = "erenoske"
-    
-    private let tableView = UITableView()
     
     private let stackView: UIStackView = {
         
@@ -90,7 +87,7 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .label
         
-        APICaller.shared.getGithupUser(with: userName) { [weak self] result in
+        APICaller.shared.getGithupUser(with: UserData.shared.userName) { [weak self] result in
             switch result {
             case .success(let titles):
                 DispatchQueue.main.async {

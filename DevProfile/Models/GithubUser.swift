@@ -11,4 +11,5 @@ struct GithubUser: Codable {
     let login: String
     let name: String
     let avatarUrl: String
+    let description: String?
 }

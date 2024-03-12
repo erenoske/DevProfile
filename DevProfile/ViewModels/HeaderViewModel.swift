@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct HeaderViewModel {
+    let login: String
+    let name: String
+    let avatarUrl: String
+}

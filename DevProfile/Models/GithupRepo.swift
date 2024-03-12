@@ -10,7 +10,9 @@ import Foundation
 struct GithupRepo: Codable {
     let name: String
     let description: String?
+    let svnUrl: String
     let owner: Owner
+    let stargazersCount: Int
 }
 
 struct Owner: Codable {
