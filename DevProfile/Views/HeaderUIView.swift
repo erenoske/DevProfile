@@ -30,13 +30,11 @@ class HeaderUIView: UIView {
         imageView.layer.borderColor = UIColor.label.cgColor
         return imageView
     }()
-
     
     private let titleLabel: UILabel = {
        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 22, weight: .bold)
         return label
     }()
     
@@ -44,6 +42,7 @@ class HeaderUIView: UIView {
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         return label
     }()
     
@@ -54,8 +53,9 @@ class HeaderUIView: UIView {
         self.addSubview(stackView)
         
         stackView.addArrangedSubview(profileImageView)
-        stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(nameTitleLabel)
+        stackView.addArrangedSubview(titleLabel)
+
         
         aplyConstraints()
     }
@@ -78,7 +78,7 @@ class HeaderUIView: UIView {
     
     public func configureHeader(with model: HeaderViewModel) {
         DispatchQueue.main.async {
-            self.titleLabel.text = model.login
+            self.titleLabel.text = model.login.capitalizeFirstLetter()
             self.nameTitleLabel.text = model.name
             
             guard let url = URL(string: model.avatarUrl) else {

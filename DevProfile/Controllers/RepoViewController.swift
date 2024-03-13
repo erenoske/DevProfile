@@ -7,7 +7,8 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class RepoViewController: UIViewController {
+    
     
     private var titlesRepo: [GithupRepo] = [GithupRepo]()
     private var headerView: HeaderUIView?
@@ -66,7 +67,7 @@ class SecondViewController: UIViewController {
     
 }
 
-extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
+extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         titlesRepo.count
@@ -100,5 +101,3 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
-

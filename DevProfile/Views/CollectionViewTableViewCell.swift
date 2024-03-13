@@ -27,7 +27,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         let button = UIButton()
         let image = UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(pointSize: 12))
         button.setImage(image, for: .normal)
-        button.tintColor = .white
+        button.tintColor = .label
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

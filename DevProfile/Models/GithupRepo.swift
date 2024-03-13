@@ -17,4 +17,5 @@ struct GithupRepo: Codable {
 
 struct Owner: Codable {
     let htmlUrl: String
+    let avatarUrl: String
 }

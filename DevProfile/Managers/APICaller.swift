@@ -63,4 +63,27 @@ class APICaller {
         
         task.resume()
     }
+    
+    func getGithupUserStarred(with user: String, completion: @escaping (Result<[GithupRepo], Error>) -> Void) {
+        guard let url = URL(string: "\(Constants.gitBaseURL)users/\(user)/starred") else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let results = try decoder.decode([GithupRepo].self, from: data)
+                completion(.success(results))
+            } catch {
+                completion(.failure(APIError.failedTogetData))
+            }
+        }
+        
+        task.resume()
+    }
 }

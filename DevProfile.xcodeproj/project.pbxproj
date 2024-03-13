@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02BAB6C2BA05A19002BBE4B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02BAB6B2BA05A19002BBE4B /* MainTabBarViewController.swift */; };
+		B02BAB6E2BA0671D002BBE4B /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02BAB6D2BA0671D002BBE4B /* RepoViewController.swift */; };
+		B02BAB732BA078EF002BBE4B /* StarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02BAB722BA078EE002BBE4B /* StarsViewController.swift */; };
+		B02BAB772BA080B6002BBE4B /* StarsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02BAB762BA080B6002BBE4B /* StarsCollectionViewCell.swift */; };
 		B064F0A12B96735C00C3C514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064F0A02B96735C00C3C514 /* AppDelegate.swift */; };
 		B064F0A32B96735C00C3C514 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064F0A22B96735C00C3C514 /* SceneDelegate.swift */; };
-		B064F0A52B96735C00C3C514 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064F0A42B96735C00C3C514 /* MainViewController.swift */; };
+		B064F0A52B96735C00C3C514 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064F0A42B96735C00C3C514 /* HomeViewController.swift */; };
 		B064F0AA2B96735E00C3C514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B064F0A92B96735E00C3C514 /* Assets.xcassets */; };
 		B064F0AD2B96735E00C3C514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B064F0AB2B96735E00C3C514 /* LaunchScreen.storyboard */; };
 		B064F0B82B96756B00C3C514 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064F0B72B96756B00C3C514 /* GithubUser.swift */; };
-		B0AAEEE32B96873D006D81AC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEEE22B96873D006D81AC /* SecondViewController.swift */; };
 		B0AAEF382B9D4253006D81AC /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEF372B9D4253006D81AC /* APICaller.swift */; };
 		B0AAEF3D2B9D525D006D81AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AAEF3C2B9D525D006D81AC /* Extensions.swift */; };
 		B0AAEF402B9D5338006D81AC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B0AAEF3F2B9D5338006D81AC /* SDWebImage */; };
@@ -26,15 +29,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02BAB6B2BA05A19002BBE4B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		B02BAB6D2BA0671D002BBE4B /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		B02BAB722BA078EE002BBE4B /* StarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsViewController.swift; sourceTree = "<group>"; };
+		B02BAB762BA080B6002BBE4B /* StarsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B064F09D2B96735C00C3C514 /* DevProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B064F0A02B96735C00C3C514 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B064F0A22B96735C00C3C514 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B064F0A42B96735C00C3C514 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B064F0A42B96735C00C3C514 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B064F0A92B96735E00C3C514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B064F0AC2B96735E00C3C514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B064F0AE2B96735E00C3C514 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B064F0B72B96756B00C3C514 /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
-		B0AAEEE22B96873D006D81AC /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B0AAEF372B9D4253006D81AC /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		B0AAEF3C2B9D525D006D81AC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B0AAEF432B9E83A0006D81AC /* GithupRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithupRepo.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 				B064F0B42B9674FE00C3C514 /* Controllers */,
 				B064F0A02B96735C00C3C514 /* AppDelegate.swift */,
 				B064F0A22B96735C00C3C514 /* SceneDelegate.swift */,
+				B02BAB6B2BA05A19002BBE4B /* MainTabBarViewController.swift */,
 				B064F0A92B96735E00C3C514 /* Assets.xcassets */,
 				B064F0AB2B96735E00C3C514 /* LaunchScreen.storyboard */,
 				B064F0AE2B96735E00C3C514 /* Info.plist */,
@@ -94,8 +101,9 @@
 		B064F0B42B9674FE00C3C514 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B064F0A42B96735C00C3C514 /* MainViewController.swift */,
-				B0AAEEE22B96873D006D81AC /* SecondViewController.swift */,
+				B064F0A42B96735C00C3C514 /* HomeViewController.swift */,
+				B02BAB6D2BA0671D002BBE4B /* RepoViewController.swift */,
+				B02BAB722BA078EE002BBE4B /* StarsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			children = (
 				B0AAEF4A2B9EF959006D81AC /* CollectionViewTableViewCell.swift */,
 				B0AAEF4C2B9F08BD006D81AC /* HeaderUIView.swift */,
+				B02BAB762BA080B6002BBE4B /* StarsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,15 +230,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0AAEF4B2B9EF959006D81AC /* CollectionViewTableViewCell.swift in Sources */,
-				B0AAEEE32B96873D006D81AC /* SecondViewController.swift in Sources */,
 				B064F0B82B96756B00C3C514 /* GithubUser.swift in Sources */,
 				B0AAEF462B9EC964006D81AC /* UserData.swift in Sources */,
 				B0AAEF442B9E83A0006D81AC /* GithupRepo.swift in Sources */,
 				B0AAEF502B9F2B8A006D81AC /* HeaderViewModel.swift in Sources */,
+				B02BAB6E2BA0671D002BBE4B /* RepoViewController.swift in Sources */,
 				B0AAEF4D2B9F08BD006D81AC /* HeaderUIView.swift in Sources */,
-				B064F0A52B96735C00C3C514 /* MainViewController.swift in Sources */,
+				B02BAB6C2BA05A19002BBE4B /* MainTabBarViewController.swift in Sources */,
+				B02BAB732BA078EF002BBE4B /* StarsViewController.swift in Sources */,
+				B064F0A52B96735C00C3C514 /* HomeViewController.swift in Sources */,
 				B0AAEF382B9D4253006D81AC /* APICaller.swift in Sources */,
 				B064F0A12B96735C00C3C514 /* AppDelegate.swift in Sources */,
+				B02BAB772BA080B6002BBE4B /* StarsCollectionViewCell.swift in Sources */,
 				B064F0A32B96735C00C3C514 /* SceneDelegate.swift in Sources */,
 				B0AAEF3D2B9D525D006D81AC /* Extensions.swift in Sources */,
 			);
