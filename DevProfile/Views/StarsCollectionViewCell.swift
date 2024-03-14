@@ -49,15 +49,15 @@ class StarsCollectionViewCell: UICollectionViewCell {
     
     private func configureConstraints() {
         let myImageViewConstraints = [
-            myImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            myImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             myImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30),
-            myImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            myImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            myImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            myImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
         ]
         let nameLabelViewConstraints = [
             nameLabel.topAnchor.constraint(equalTo: myImageView.bottomAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5)
         ]
         
         NSLayoutConstraint.activate(nameLabelViewConstraints)

@@ -15,5 +15,5 @@ struct GithubUser: Codable {
     let following: Int
     let publicRepos: Int
     let publicGists: Int
-    let description: String?
+    let bio: String?
 }

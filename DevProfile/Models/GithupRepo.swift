@@ -13,6 +13,7 @@ struct GithupRepo: Codable {
     let svnUrl: String
     let owner: Owner
     let stargazersCount: Int
+    let language: String?
 }
 
 struct Owner: Codable {

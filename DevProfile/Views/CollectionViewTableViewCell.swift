@@ -38,6 +38,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .label
         label.textAlignment = .left
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
@@ -52,10 +53,20 @@ class CollectionViewTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let languageLabel: UILabel = {
+        
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .label
+        label.textAlignment = .left
+        return label
+    }()
+    
     public func configure(with model: GithupRepo) {
         nameLabel.text = model.name
         descriptionLabel.text = model.description
         starLabel.text = String(model.stargazersCount)
+        languageLabel.text = model.language
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -65,6 +76,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         contentView.addSubview(starLabel)
         contentView.addSubview(starButton)
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(languageLabel)
         
         aplyConstraints()
     }
@@ -76,7 +88,8 @@ class CollectionViewTableViewCell: UITableViewCell {
         ]
         
         let descriptionLabelViewConstraints = [
-            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 25),
+            descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
         ]
@@ -91,10 +104,17 @@ class CollectionViewTableViewCell: UITableViewCell {
             starLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35)
         ]
         
+        let languageLabelViewConstraints = [
+            languageLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            languageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            languageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+        ]
+        
         NSLayoutConstraint.activate(nameLabelViewConstraints)
         NSLayoutConstraint.activate(descriptionLabelViewConstraints)
         NSLayoutConstraint.activate(starButtonViewConstraints)
         NSLayoutConstraint.activate(starLabelViewConstraints)
+        NSLayoutConstraint.activate(languageLabelViewConstraints)
     }
     
     required init?(coder: NSCoder) {

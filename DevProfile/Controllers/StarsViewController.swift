@@ -10,6 +10,8 @@ import UIKit
 class StarsViewController: UIViewController {
     
     private var titlesRepo: [GithupRepo] = [GithupRepo]()
+    
+    private var page = 1
 
     private let collectionView: UICollectionView = {
        
@@ -33,10 +35,14 @@ class StarsViewController: UIViewController {
         
         collectionView.frame = view.bounds
         
-        APICaller.shared.getGithupUserStarred(with: UserData.shared.userName) { [weak self] result in
+        getStars(page: page)
+    }
+    
+    private func getStars(page: Int) {
+        APICaller.shared.getGithupUserStarred(with: UserData.shared.userName, page: page) { [weak self] result in
             switch result {
             case .success(let titles):
-                self?.titlesRepo = titles
+                self?.titlesRepo.append(contentsOf: titles)
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
@@ -44,7 +50,6 @@ class StarsViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        
     }
 }
 
@@ -87,4 +92,14 @@ extension StarsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            page += 1
+            getStars(page: page)
+        }
+    }
 }

@@ -39,10 +39,11 @@ class APICaller {
         }
         
         task.resume()
+        
     }
     
-    func getGithupUserRepo(with user: String, completion: @escaping (Result<[GithupRepo], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.gitBaseURL)users/\(user)/repos") else {
+    func getGithupUserRepo(with user: String, page: Int, completion: @escaping (Result<[GithupRepo], Error>) -> Void) {
+        guard let url = URL(string: "\(Constants.gitBaseURL)users/\(user)/repos?page=\(page)") else {
             return
         }
         
@@ -64,8 +65,8 @@ class APICaller {
         task.resume()
     }
     
-    func getGithupUserStarred(with user: String, completion: @escaping (Result<[GithupRepo], Error>) -> Void) {
-        guard let url = URL(string: "\(Constants.gitBaseURL)users/\(user)/starred") else {
+    func getGithupUserStarred(with user: String, page: Int, completion: @escaping (Result<[GithupRepo], Error>) -> Void) {
+        guard let url = URL(string: "\(Constants.gitBaseURL)users/\(user)/starred?page=\(page)") else {
             return
         }
         

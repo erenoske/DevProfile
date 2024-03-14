@@ -67,6 +67,14 @@ class HomeViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private let bioLabel: UILabel = {
+       
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     private let followingLabel: UILabel = {
        
@@ -134,6 +142,7 @@ class HomeViewController: UIViewController {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(horizontalStackView)
         stackView.addArrangedSubview(horizontalSecondStackView)
+        stackView.addArrangedSubview(bioLabel)
         
         configureConstraints()
         
@@ -147,6 +156,7 @@ class HomeViewController: UIViewController {
                     self?.followersLabel.text = String(titles.followers) + " Followers"
                     self?.followingLabel.text = String(titles.following) + " Following"
                     self?.projectLabel.text = String(titles.publicRepos) + " Repositories"
+                    self?.bioLabel.text = titles.bio
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -165,11 +175,16 @@ class HomeViewController: UIViewController {
         let profileImageViewConstraints = [
             profileImageView.widthAnchor.constraint(equalToConstant: 100),
             profileImageView.heightAnchor.constraint(equalToConstant: 100)
-            
+        ]
+        
+        let bioLabelViewConstraints = [
+            bioLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
         ]
 
         NSLayoutConstraint.activate(profileImageViewConstraints)
         NSLayoutConstraint.activate(stackViewConstraints)
+        NSLayoutConstraint.activate(bioLabelViewConstraints)
     }
 
     func configure(with model: GithubUser) {

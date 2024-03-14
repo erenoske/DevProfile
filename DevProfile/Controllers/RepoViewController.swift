@@ -12,6 +12,7 @@ class RepoViewController: UIViewController {
     
     private var titlesRepo: [GithupRepo] = [GithupRepo]()
     private var headerView: HeaderUIView?
+    private var page = 1
     
     private let projectsTable: UITableView = {
         
@@ -35,17 +36,7 @@ class RepoViewController: UIViewController {
         
         projectsTable.frame = view.bounds
         
-        APICaller.shared.getGithupUserRepo(with: UserData.shared.userName) { [weak self] result in
-            switch result {
-            case .success(let titles):
-                self?.titlesRepo = titles
-                DispatchQueue.main.async {
-                    self?.projectsTable.reloadData()
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        getRepos(page: page)
         
         configureHeaderView()
     }
@@ -59,6 +50,20 @@ class RepoViewController: UIViewController {
                     name: titles.name,
                     avatarUrl: titles.avatarUrl
                 ))
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func getRepos(page: Int) {
+        APICaller.shared.getGithupUserRepo(with: UserData.shared.userName, page: page) { [weak self] result in
+            switch result {
+            case .success(let titles):
+                self?.titlesRepo.append(contentsOf: titles)
+                DispatchQueue.main.async {
+                    self?.projectsTable.reloadData()
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -97,7 +102,18 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 100
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            page += 1
+            getRepos(page: page)
+        }
     }
     
 }
