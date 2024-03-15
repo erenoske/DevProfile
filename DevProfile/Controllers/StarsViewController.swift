@@ -102,4 +102,5 @@ extension StarsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             getStars(page: page)
         }
     }
+    
 }

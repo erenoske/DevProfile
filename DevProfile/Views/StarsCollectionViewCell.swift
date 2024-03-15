@@ -49,7 +49,7 @@ class StarsCollectionViewCell: UICollectionViewCell {
     
     private func configureConstraints() {
         let myImageViewConstraints = [
-            myImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            myImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             myImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30),
             myImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             myImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),

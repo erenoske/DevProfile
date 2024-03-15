@@ -13,10 +13,11 @@ class RepoViewController: UIViewController {
     private var titlesRepo: [GithupRepo] = [GithupRepo]()
     private var headerView: HeaderUIView?
     private var page = 1
+    private var blurView: UIVisualEffectView!
     
     private let projectsTable: UITableView = {
         
-        let table = UITableView(frame: .zero, style: .plain)
+        let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
@@ -24,7 +25,7 @@ class RepoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         view.addSubview(projectsTable)
         
@@ -40,6 +41,7 @@ class RepoViewController: UIViewController {
         
         configureHeaderView()
     }
+    
     
     private func configureHeaderView() {
         APICaller.shared.getGithupUser(with: UserData.shared.userName) { [weak self] result in
@@ -83,6 +85,17 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
+        let separatorView = UIView()
+            separatorView.backgroundColor = UIColor.systemGray3
+            cell.contentView.addSubview(separatorView)
+            
+            separatorView.translatesAutoresizingMaskIntoConstraints = false
+            separatorView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+            separatorView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
+            separatorView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+            separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+            
+        
         let title = titlesRepo[indexPath.row]
         cell.configure(with: title)
         return cell
@@ -99,6 +112,7 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
         
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,6 +127,14 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
         if offsetY > contentHeight - height {
             page += 1
             getRepos(page: page)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        if cell.responds(to: #selector(setter: UIView.layoutMargins)) {
+            cell.layoutMargins = UIEdgeInsets.zero
         }
     }
     
