@@ -63,6 +63,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B019767B2BB1CF8000C4B2FD /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B064F0A22B96735C00C3C514 /* SceneDelegate.swift */,
+				B064F0A02B96735C00C3C514 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		B019767C2BB1CF9D00C4B2FD /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				B064F0A92B96735E00C3C514 /* Assets.xcassets */,
+				B064F0AB2B96735E00C3C514 /* LaunchScreen.storyboard */,
+				B064F0AE2B96735E00C3C514 /* Info.plist */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		B064F0942B96735C00C3C514 = {
 			isa = PBXGroup;
 			children = (
@@ -82,18 +101,15 @@
 		B064F09F2B96735C00C3C514 /* DevProfile */ = {
 			isa = PBXGroup;
 			children = (
+				B019767C2BB1CF9D00C4B2FD /* Files */,
+				B019767B2BB1CF8000C4B2FD /* Delegate */,
 				B0AAEF362B9D4240006D81AC /* Managers */,
 				B0AAEF3B2B9D5239006D81AC /* Resources */,
 				B0AAEF482B9EF84B006D81AC /* ViewModels */,
 				B064F0B62B96754F00C3C514 /* Models */,
 				B0AAEF492B9EF8A5006D81AC /* Views */,
 				B064F0B42B9674FE00C3C514 /* Controllers */,
-				B064F0A02B96735C00C3C514 /* AppDelegate.swift */,
-				B064F0A22B96735C00C3C514 /* SceneDelegate.swift */,
 				B02BAB6B2BA05A19002BBE4B /* MainTabBarViewController.swift */,
-				B064F0A92B96735E00C3C514 /* Assets.xcassets */,
-				B064F0AB2B96735E00C3C514 /* LaunchScreen.storyboard */,
-				B064F0AE2B96735E00C3C514 /* Info.plist */,
 			);
 			path = DevProfile;
 			sourceTree = "<group>";

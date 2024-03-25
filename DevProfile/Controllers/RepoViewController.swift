@@ -19,6 +19,8 @@ class RepoViewController: UIViewController {
         
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
+        table.showsVerticalScrollIndicator = false
+        table.separatorStyle = .none
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -41,7 +43,6 @@ class RepoViewController: UIViewController {
         
         configureHeaderView()
     }
-    
     
     private func configureHeaderView() {
         APICaller.shared.getGithupUser(with: UserData.shared.userName) { [weak self] result in
@@ -127,14 +128,6 @@ extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
         if offsetY > contentHeight - height {
             page += 1
             getRepos(page: page)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-        if cell.responds(to: #selector(setter: UIView.layoutMargins)) {
-            cell.layoutMargins = UIEdgeInsets.zero
         }
     }
     

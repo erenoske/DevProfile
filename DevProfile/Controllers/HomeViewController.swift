@@ -168,7 +168,7 @@ class HomeViewController: UIViewController {
     private func configureConstraints() {
         
         let stackViewConstraints = [
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
 

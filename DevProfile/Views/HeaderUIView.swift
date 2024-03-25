@@ -62,7 +62,7 @@ class HeaderUIView: UIView {
     
     private func aplyConstraints() {
         let stackViewConstraints = [
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ]
         

@@ -21,12 +21,15 @@ class StarsViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemBackground
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.register(StarsCollectionViewCell.self, forCellWithReuseIdentifier: StarsCollectionViewCell.identifier)
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Stars"
 
         collectionView.dataSource = self
         collectionView.delegate = self
